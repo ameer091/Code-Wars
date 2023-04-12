@@ -49,5 +49,5 @@ var number = function(busStops){
     return totalPeople;
   }
 
-  //Other Solutions
+  //Other Solutions useful to learn more with reduce
   const number = busStops => busStops.reduce((p,n) => p+n[0]-n[1],0)

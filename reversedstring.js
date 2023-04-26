@@ -13,3 +13,5 @@ function solution(str){
 //Other solutions
 
 const solution = str => str.split('').reverse().join('');
+
+//Before I forget

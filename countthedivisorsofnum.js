@@ -35,3 +35,71 @@ function getDivisorsCnt(n){
   // return the count of divisors of n
   return count;
 }
+
+
+//Other Solutions
+function getDivisorsCnt(n) {
+  if (n === 1) return n
+
+  // Use formuls http://vk.cc/4G1m8t
+  let divArr = [[2, 0]] // 'divisor', 'number'
+  let div = divArr[0][0] // first divisor
+
+  while (n > 1) {
+    if (n % div === 0) {
+      for (let i = 0; divArr.length; i++) {
+        if (divArr[i][0] === div) {
+          divArr[i][1] += 1
+          break
+        } else {
+          if (i === divArr.length - 1) {
+            divArr.push([div, 1])
+            break
+          }
+        }
+      }
+      n /= div
+    } else {
+      div += 1
+    }
+  }
+
+  for (let i = 0; i < divArr.length; i++) {
+    n *= divArr[i][1] + 1
+  }
+
+  return n
+}
+
+//Other Solutions
+function getDivisorsCnt(n){
+  var num=0;
+  if(n==1) return 1;
+  if(n%Math.sqrt(n)==0) num++;
+  for(var i=1;i<Math.sqrt(n);i++){
+      if(n%i==0){
+          num+=2;
+      }
+  }
+  return num;
+}
+
+//Other Solutions
+function getDivisorsCnt(n){
+  var res=[], sqrt=Math.sqrt(n);
+  for(let i=1; i<=sqrt; ++i){
+    if(n%i==0){res.push(i); res.push(n/i);}
+  }
+  res = Array.from(new Set(res));
+  return res.length;
+}
+
+//Other Solutions
+function getDivisorsCnt(n){
+  let count = 0;
+  for (let i = 1; i <= n; i++) if (!(n % i)) count++;
+  return count;
+}
+
+
+

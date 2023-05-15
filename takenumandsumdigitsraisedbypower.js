@@ -130,3 +130,5 @@ function sumDigPow(a, b) {
 
   return arr;
 }
+
+//I like this one and would like to use it again

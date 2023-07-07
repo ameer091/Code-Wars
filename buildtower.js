@@ -61,7 +61,7 @@ function towerBuilder(n) {
   return [...Array(n)].map((_,i)=>" ".repeat(n-1-i)+"*".repeat(i*2+1)+" ".repeat(n-1-i))
 }
 
-//Other Solutions
+//Other Solution
 function towerBuilder(nFloors) {
   // build here
   let space,star, tower = [];
